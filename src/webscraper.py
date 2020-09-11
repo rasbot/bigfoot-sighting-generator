@@ -2,9 +2,23 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
+"""Loops through the valid ids from ids.txt, injects them into a URL,
+   and web scrapes the sighting data for each report,
+   writing them to a json file as they are scraped.
+"""
+
 
 def get_data_from_id(id):
-    """parse the URL and store the data in a dictionary"""
+    """
+    Parses the URL and stores the data in a dictionary.
+
+            Parameters:
+                    id (str): Valid id to inject into a URL.
+
+            Returns:
+                    sighting_d (dict): A dictionary of data from the relevant
+                    sighting.
+    """
     sighting_d = dict()
     URL = f"https://www.bfro.net/GDB/show_report.asp?id={id}"
     page = requests.get(URL)
