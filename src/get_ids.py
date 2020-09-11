@@ -1,6 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 
+"""
+Parses through a range of potential report ids, and writes valid ids to a text file.
+A valid report is on which has a soup length of 5 whereas invalid reports (URLs that
+do not contain a report) have a soup length of 4.
+"""
 
 if __name__ == "__main__":
 
