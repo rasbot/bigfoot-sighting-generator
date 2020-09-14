@@ -40,6 +40,27 @@ def create_df(reports):
     return reports_df
 
 
+def get_bag_of_words(df, feature, folder):
+    """
+    Creates a bag of words for a feature column.
+
+        Parameters:
+                df (dataframe): A dataframe of the sightings data.
+                feature (str): The name of the feature column to extract.
+                folder (str): Folder to store the txt file.
+
+        Returns:
+                None.
+    """
+    sub_df = df.loc[df[feature].notnull()][feature]
+    s = ""
+    for i in sub_df:
+        s = s + i
+    text_file = open(f"{folder}/{feature}.txt", "w", encoding="utf-8")
+    text_file.write(s)
+    text_file.close()
+
+
 def get_state_data(df, folder):
     """
     From the main dataframe, gets a list of unique states that have had sightings
