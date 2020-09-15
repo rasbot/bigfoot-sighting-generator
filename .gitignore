@@ -1,1 +1,5 @@
 .ipynb_checkpoints/
+*.pyc
+data/environment/save/
+data/observed/save/
+data/time_conditions/save/
