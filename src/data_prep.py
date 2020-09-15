@@ -55,8 +55,8 @@ def get_bag_of_words(df, feature, folder):
     sub_df = df.loc[df[feature].notnull()][feature]
     s = ""
     for i in sub_df:
-        s = s + i
-    text_file = open(f"{folder}/{feature}.txt", "w", encoding="utf-8")
+        s = s + i + " "
+    text_file = open("{0}/{1}.txt".format(folder, feature), "w", encoding="utf-8")
     text_file.write(s)
     text_file.close()
 
@@ -93,5 +93,5 @@ def get_state_data(df, folder):
                 "Nearest Town": nearest_town_d[i],
                 "Nearest Road": nearest_road_d[i]}
 
-    with open(f"{folder}/states.json", "w") as f:
+    with open("{}/states.json".format(folder), "w") as f:
         json.dump(d, f, indent=4, sort_keys=False)
