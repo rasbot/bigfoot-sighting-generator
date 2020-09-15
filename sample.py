@@ -32,8 +32,10 @@ def main():
                         help='number of samples to print')
     parser.add_argument('--quiet', '-q', default=False, action='store_true',
                         help='suppress printing the prime text (default false)')
-    parser.add_argument('--save', '-s', type=str, default=' ',
+    parser.add_argument('--save', '-s', type=str, default=False,
                         help='should this run be saved in a json file or not (default False)')
+    parser.add_argument('--type', '-t', type=str, default='',
+                        help='used to determine the type of text generated, such as observed, environment, or time/conditions.')
 
     args = parser.parse_args()
     sample(args)
@@ -55,18 +57,24 @@ def sample(args):
                 text = model.sample(sess, words, vocab, args.n, args.prime,
                                     args.sample, args.pick, args.width, args.quiet)
                 text = ".".join(text.split(".")[1:-1])+"."
-                text = text.lstrip().capitalize()
+                if text[0].isalpha() == False:
+                    text = text[1:].capitalize()
+                else:
+                    text = text.lstrip().capitalize()
                 if args.save:
-                    date_time_now = str(datetime.now())
-                    with open("bigfoot_sighting_output.json", "a") as f:
-                        bigfoot_d = dict()
-                        bigfoot_d[date_time_now] = text
-                        with open("bigfoot_sighting_output.json") as f:
-                            data = json.load(f)
-                        data.update(bigfoot_d)
-                        with open("bigfoot_sighting_output.json", 'w') as f:
-                            json.dump(data, f, indent=4, sort_keys=False)
-                        f.close()
+                    # date_time_now = str(datetime.now())
+                    with open("temp_{}.txt".format(args.type), "w", encoding="utf-8") as f:
+                        f.write(text)
+                    f.close()
+                    # with open("bigfoot_sighting_output.json", "a") as f:
+                    #     bigfoot_d = dict()
+                    #     bigfoot_d[date_time_now] = text
+                    #     with open("bigfoot_sighting_output.json") as f:
+                    #         data = json.load(f)
+                    #     data.update(bigfoot_d)
+                    #     with open("bigfoot_sighting_output.json", 'w') as f:
+                    #         json.dump(data, f, indent=4, sort_keys=False)
+                    #     f.close()
                 print(text)
 
 
