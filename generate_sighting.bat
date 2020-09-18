@@ -5,3 +5,4 @@ python sample.py --save_dir="data/environment/save" -n=30 -s=True -t="environmen
 python sample.py --save_dir="data/time_conditions/save" -n=20 -s=True -t="time_conditions"
 
 python generate_sighting.py
+python generate_tweet.py
