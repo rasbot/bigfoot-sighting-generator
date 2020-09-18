@@ -1,10 +1,9 @@
 import src.data_prep as dp
-import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import json
 from datetime import datetime
 import src.data_prep as dp
+
 
 reports = dp.import_data("data/data.json")
 df = dp.create_df(reports)
@@ -50,30 +49,3 @@ with open("generated_sightings.json", "a") as f:
         with open("generated_sightings.json", "w") as f:
             json.dump(data, f, indent=4, sort_keys=False)
 f.close()
-
-with open("generated_sightings.json") as f:
-    data = json.load(f)
-
-# key of the newest entry
-latest_key = sorted(data.keys())[-1]
-
-latest_sighting = data[latest_key]
-
-sighting_info = """SEASON: {season}
-
-STATE: {state}
-
-NEAREST TOWN: {nearest_town}
-
-NEAREST ROAD: {nearest_road}
-
-ENVIRONMENT: {env}
-
-TIME AND CONDITIONS: {tc}
-
-""".format(season=latest_sighting["SEASON: "], state=latest_sighting["STATE: "], nearest_town=latest_sighting["NEAREST TOWN: "], nearest_road=latest_sighting["NEAREST ROAD: "], env=latest_sighting["ENVIRONMENT: "], tc=latest_sighting["TIME AND CONDITIONS: "])
-
-observation = """OBSERVATION: {obs}""".format(obs=latest_sighting["OBSERVATION: "])
-
-print(sighting_info)
-print(observation)
