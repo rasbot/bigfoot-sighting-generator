@@ -40,24 +40,28 @@ def create_df(reports):
     return reports_df
 
 
-def get_bag_of_words(df, feature, folder):
+def get_bag_of_words(df, feature_list, folder, filename):
     """
-    Creates a bag of words for a feature column.
+    Creates a bag of words for a list of feature columns.
 
         Parameters:
                 df (dataframe): A dataframe of the sightings data.
-                feature (str): The name of the feature column to extract.
+                features (str): A list of the names of the feature columns to extract.
                 folder (str): Folder to store the txt file.
+                filename (str): Name of the text file.
 
         Returns:
                 None.
     """
-    sub_df = df.loc[df[feature].notnull()][feature]
-    s = ""
-    for i in sub_df:
-        s = s + i + " "
+    corpus = ""
+    for feature in feature_list:
+        sub_df = df.loc[df[feature].notnull()][feature]
+        s = ""
+        for i in sub_df:
+            s = s + i + " "
+        corpus += s
     text_file = open("{0}/{1}.txt".format(folder, feature), "w", encoding="utf-8")
-    text_file.write(s)
+    text_file.write(corpus)
     text_file.close()
 
 
