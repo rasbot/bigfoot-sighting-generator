@@ -60,7 +60,7 @@ def get_bag_of_words(df, feature_list, folder, filename):
         for i in sub_df:
             s = s + i + " "
         corpus += s
-    text_file = open("{0}/{1}.txt".format(folder, feature), "w", encoding="utf-8")
+    text_file = open("{0}/{1}.txt".format(folder, filename), "w", encoding="utf-8")
     text_file.write(corpus)
     text_file.close()
 
@@ -69,7 +69,7 @@ def get_state_data(df, folder):
     """
     From the main dataframe, gets a list of unique states that have had sightings
     and creates a dictionary that has counties, nearest towns, and nearest roads
-    associated with sightings from those states. Writes the dictionary to a json
+    associated with sightings from those states. Write the dictionary to a json
     file called 'states.json'.
 
         Parameters:
