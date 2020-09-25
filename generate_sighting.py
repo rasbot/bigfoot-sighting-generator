@@ -3,6 +3,7 @@ import numpy as np
 import json
 from datetime import datetime
 import src.data_prep as dp
+import os
 
 
 reports = dp.import_data("data/data.json")
@@ -11,12 +12,15 @@ df = dp.create_df(reports)
 with open("temp_environment.txt", "r") as f:
     env = f.read()
 f.close()
+os.remove("temp_environment.txt")
 with open("temp_observed.txt", "r") as f:
     obs = f.read()
 f.close()
+os.remove("temp_observed.txt")
 with open("temp_time_conditions.txt", "r") as f:
     tc = f.read()
 f.close()
+os.remove("temp_time_conditions.txt")
 
 with open("data/states.json", "r") as f:
     states_data = json.load(f)
