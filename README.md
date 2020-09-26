@@ -12,3 +12,15 @@ This project generates bigfoot sightings using a RNN (recurrent neural network).
 
 
 This project is based off a case study I did during the Galvanize Data Science bootcamp, which involved analyzing some data from this site.
+
+# Data Analysis
+
+The data web scraped from the site shows trends for how many sightings are reported for each month.
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/rasbot/bigfoot-sighting-generator/master/images/month.png" width="700" height="auto"/>
+</p>
+
+<p style="text-align: center;">
+Sighting counts for each month of the year.
+</p>
