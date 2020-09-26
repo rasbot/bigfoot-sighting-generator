@@ -22,5 +22,25 @@ The data web scraped from the site shows trends for how many sightings are repor
 </p>
 
 <p style="text-align: center;">
-Sighting counts for each month of the year.
+    Sighting counts for each month of the year.
+</p>
+
+Sighting counts over the entire range of the website's reports, aggregated by year reflect an increasing trend, partially because the internet hasn't been around at the time of all the sightings, and ones reported from past years are fewer.
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/rasbot/bigfoot-sighting-generator/master/images/year.png" width="700" height="auto"/>
+</p>
+
+<p style="text-align: center;">
+    Sighting counts for each year from 1950 to present.
+</p>
+
+Seasonally, sightings are more frequent in the summer, and less in the winter due to the amount of outdoor activity each season has, as shown below.
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/rasbot/bigfoot-sighting-generator/master/images/season4.png" width="700" height="auto"/>
+</p>
+
+<p style="text-align: center;">
+    Sighting counts for each month of the year.
 </p>
