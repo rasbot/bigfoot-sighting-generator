@@ -41,6 +41,4 @@ Seasonally, sightings are more frequent in the summer, and less in the winter du
     <img src="https://raw.githubusercontent.com/rasbot/bigfoot-sighting-generator/master/images/season4.png" width="700" height="auto"/>
 </p>
 
-<p style="text-align: center;">
-    Sighting counts for each month of the year.
-</p>
+<center>Sighting counts for each month of the year.</center>
