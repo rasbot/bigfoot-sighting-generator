@@ -1,4 +1,7 @@
-# Bigfoot Sightings Generator
+<div align="center">
+    <img src="https://raw.githubusercontent.com/rasbot/bigfoot-sighting-generator/master/images/bigfoot.gif" width="900" height="auto"/>
+
+</div>
 
 This project generates bigfoot sightings using a RNN (recurrent neural network). Bigfoot sightings are reported on the website https://www.bfro.net/, the bigfoot field researchers organization. The pipeline for this project is:
 
