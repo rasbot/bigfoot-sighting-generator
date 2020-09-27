@@ -61,3 +61,42 @@ Looking at all of the sightings, a word cloud of the most frequent words can vis
   <img src="images/bigfoot_in_woods.png" width="700" height="auto"/>
   <p>Bigfoot shaped word cloud.</p>
 </div>
+
+### Feature Extraction
+
+Using K-means clustering and non-negative matrix factorization, the features of the sightings can be extracted and labeled. Typical clustered features look like
+
+> ['heard' 'sound' 'like' 'tent' 'night' 'loud' 'sounded' 'sounds' 'camp'
+ 'scream']
+
+> ['tracks' 'prints' 'print' 'snow' 'foot' 'inches' 'track' 'trail' 'toes'
+ 'footprints']
+
+> ['just' 'saw' 'like' 'tree' 'woods' 'looked' 'trail' 'deer' 'got' 'feet']
+
+> ['road' 'saw' 'car' 'driving' 'creature' 'tall' 'just' 'looked' 'hair'
+ 'like']
+
+> ['creature' 'saw' 'area' 'large' 'river' 'seen' 'like' 'tall' 'feet'
+ 'bigfoot']
+
+> ['house' 'window' 'door' 'heard' 'dogs' 'outside' 'like' 'dog' 'night'
+ 'went']
+
+And labels can be inferred based on these vocabulary terms, such as
+
+> ['Heard', 'Tracking' 'Seen', 'Driving', 'Saw', 'House']
+
+Taking the top 10 states for each label, and plotting sighting counts can show how each type of sighting varies from different states.
+
+<div align="center">
+  <img src="images/labels_er.png" width="900" height="auto"/>
+  <p>Sighting counts for the top states based on type of sighting.</p>
+</div>
+
+And stacking them for the top states shows not only which states have the highest number of sightings, but of which type.
+
+<div align="center">
+  <img src="images/labels_all_er.png" width="800" height="auto"/>
+  <p>Sighting counts for different features for the top states reporting these types.</p>
+</div>
