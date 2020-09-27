@@ -59,5 +59,5 @@ Looking at all of the sightings, a word cloud of the most frequent words can vis
 
 <div align="center">
   <img src="images/bigfoot_in_woods.png" width="700" height="auto"/>
-  <p>Sighting counts for each month of the year.</p>
+  <p>Bigfoot shaped word cloud.</p>
 </div>
