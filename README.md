@@ -52,3 +52,12 @@ Seasonally, sightings are more frequent in the summer, and less in the winter du
   <img src="images/season4.png" width="700" height="auto"/>
   <p>Sighting counts for each month of the year.</p>
 </div>
+
+## Sighting Content
+
+Looking at all of the sightings, a word cloud of the most frequent words can visually show the common words used to describe bigfoot sightings. A bag of words containing all the sighting text was created, and stop words (words like "the", "and", "or", etc) were filtered out. The word cloud was processed through a filter mask in the shape of bigfoot, and a nighttime forest background was added.
+
+<div align="center">
+  <img src="images/bigfoot_in_woods.png" width="700" height="auto"/>
+  <p>Sighting counts for each month of the year.</p>
+</div>
