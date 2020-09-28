@@ -114,3 +114,51 @@ And stacking them for the top states shows not only which states have the highes
   <img src="images/labels_all_er.png" width="800" height="auto"/>
   <p>Sighting counts for different features for the top states reporting these types.</p>
 </div>
+
+# GPT-2 Transformer Model and RNNs
+
+3 models were trained for this project. A RNN using TensorFlow, a RNN using PyTorch, and a GPT-2 model. They all generated interesting examples which were anywhere from completely illegible to fairly believable.
+
+## RNN Model
+
+The first model for text generation was trained using a RNN with TensorFlow. This model didn't generate believable text, and the sentences generated didn't have much context of the previous sentences. The training data was one large text file with all observations separated by a space. So it would look like:
+
+```
+This is observation 1. I saw a creature. It was big. This is observation 2. I was camping. I saw bigfoot! Observation 3...
+```
+
+One issue with this is that the model is learning word associations so if the word `hairy` is followed by `creature` a lot of times, there will be a strong association with the word pairings and it will have a higher probability of generating `creature` following the word `hairy`. Here are a few examples of sightings generated using the TensorFlow model:
+
+- `I have a picture of a fighter while first bike up the radio i was in a tent, thinking about 30 ft. high on it towards my vehicle i really saw the creature it was standing higher than my beard. i got a gun and he grabbed his boots in front and connects to the road. i had time to meet the out video and child to fall and met my butt off. as soon as the high 90's i decided to school and realized that it was my rifle at or his best dad looked like, at the time, i instinctively followed it at my sighting.`
+
+And another...
+
+- `Sneak wrap to knock, he's called and mr. did it go? on the way to meet me.when i was another sighting. i was trying to find it and finally fled. after setting when i saw it. i got our no attention to sound like a bear or rotten silence of the source that shook me over and from my stand. he had to pick up a very large creature walk past the south. the trail is quickly straight up as over the tree line, and disappeared. the light from the tank was comming from it as it came over by the water.`
+
+Other issues I noticed when looking at generated text from this model would be sentences like `It was 10am on a summer evening. The moon was out, maybe around midnight and it was a snowy winter day.` Which is understandable since this is text generated from a lot of training data that mentions conditions such as the time of day or the season. So clearly it has no way to understand if it generates `10am` that it should have a higher probability of picking descriptions mentioning `morning` or `day`. 
+
+## GPT-2 Model
+
+Using GPT-2, one nice feature of the model I trained was that instead of training on a large text file with all observations combined, it uses a delimiter so it can learn on sightings as a whole, preserving important relationships between words and sentences. The training data file is structured like:
+
+```
+This is observation 1. I saw a creature. It was big. 
+  
+<|endoftext|> 
+   
+This is observation 2. I was camping. I saw bigfoot! 
+
+><|endoftext|>
+
+Observation 3...
+```
+
+This results in a seemingly more coherent text generation. Here is an example:
+
+- `I was driving down into the campground area at about 6:30 am and I saw a large figures that Mike saw i.. don't know what it was, but he said it ran on two feet a good mile up a steep hill in about 3-5 seconds. He was about 40 yards from it when he did see it and he cant find it on any computer to paste on your web site.`
+
+Not too bad so far. Another example:
+
+- `My parents and I were heading east bound on SRK WAY in Nascahish National Park. I saw what looked like a Sasquatch for myself. It was near dusk. It crossed the road in front of me and went into the trees. It crossed the road in front of me and it was hairy like a person. It was dark brown and had shaggy hair. It went into the trees and I did not see it again.`
+
+These models are difficult to directly compare because there isn't a valid metric to compare them with, other than "Oh that sounds better!". Both main models (The PyTorch model took 4 days to train so I don't plan on trying that one again since the results weren't any better than the TensorFlow model) have lots of hyperparameters that can be tuned during training, and several for sampling. Since training times for both of these models were around 35 hours on the CPU and about 5 hours on the GPU (I am using a GTX 1080 Ti), it is preferable to tune the sampling hyperparameters. 
