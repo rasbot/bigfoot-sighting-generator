@@ -60,6 +60,13 @@ We can also look at a geographic map of the density of sightings per state using
   <p>Sighting counts per state.</p>
 </div>
 
+Since Washington is my home, and by the sighting counts by state it is most probable that I share my home with bigfoot, zooming in on the state to see sightings by county shows that most sightings are concentrated in King county. This means that bigfoot shares the same country as I do.
+
+<div align="center">
+  <img src="images/plotly_WA.png" width="700" height="auto"/>
+  <p>Sighting counts per country for Washington.</p>
+</div>
+
 ## Sighting Content
 
 Looking at all of the sightings, a word cloud of the most frequent words can visually show the common words used to describe bigfoot sightings. A bag of words containing all the sighting text was created, and stop words (words like "the", "and", "or", etc) were filtered out. The word cloud was processed through a filter mask in the shape of bigfoot, and a nighttime forest background was added.
