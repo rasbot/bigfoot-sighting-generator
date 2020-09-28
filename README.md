@@ -3,7 +3,7 @@
 
 </div>
 
-This project generates bigfoot sightings using a RNN (recurrent neural network). The sightings are tweeted using a twitter bot which can be accessed here:
+This project generates bigfoot sightings using GPT-2. The sightings are tweeted using a twitter bot which can be accessed here:
 
 https://www.twitter.com/sasBOTch 
 
@@ -51,6 +51,13 @@ Seasonally, sightings are more frequent in the summer, and less in the winter du
 <div align="center">
   <img src="images/season4.png" width="700" height="auto"/>
   <p>Sighting counts for each month of the year.</p>
+</div>
+
+We can also look at a geographic map of the density of sightings per state using plotly. Washington has the most sightings, which is shown on this map.
+
+<div align="center">
+  <img src="images/plotly_state.png" width="700" height="auto"/>
+  <p>Sighting counts per state.</p>
 </div>
 
 ## Sighting Content
