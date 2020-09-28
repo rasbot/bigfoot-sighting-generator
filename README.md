@@ -60,7 +60,7 @@ We can also look at a geographic map of the density of sightings per state using
   <p>Sighting counts per state.</p>
 </div>
 
-Since Washington is my home, and by the sighting counts by state it is most probable that I share my home with bigfoot, zooming in on the state to see sightings by county shows that most sightings are concentrated in King county. This means that bigfoot shares the same country as I do.
+Since Washington is my home, and by the sighting counts by state it is most probable that I share my home with bigfoot, zooming in on the state to see sightings by county shows that most sightings are concentrated in Pierce county. This means that bigfoot lives in the neighboring county (which is probably why I only see deer and coyotes in the woods next to my place).
 
 <div align="center">
   <img src="images/plotly_WA.png" width="700" height="auto"/>
