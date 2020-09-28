@@ -124,7 +124,8 @@ And stacking them for the top states shows not only which states have the highes
 The first model for text generation was trained using a RNN with TensorFlow. This model didn't generate believable text, and the sentences generated didn't have much context of the previous sentences. The training data was one large text file with all observations separated by a space. So it would look like:
 
 ```
-This is observation 1. I saw a creature. It was big. This is observation 2. I was camping. I saw bigfoot! Observation 3...
+This is observation 1. I saw a creature. It was big. This is observation 2. 
+I was camping. I saw bigfoot! Observation 3...
 ```
 
 One issue with this is that the model is learning word associations so if the word `hairy` is followed by `creature` a lot of times, there will be a strong association with the word pairings and it will have a higher probability of generating `creature` following the word `hairy`. Here are a few examples of sightings generated using the TensorFlow model:
