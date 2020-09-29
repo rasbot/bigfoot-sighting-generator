@@ -67,6 +67,13 @@ Since Washington is my home, and by the sighting counts by state it is most prob
   <p>Sighting counts per country for Washington.</p>
 </div>
 
+Since California was the next state with the most sightings, we can look at counts per county as well. It turns out that where I went to college has the highest number of sightings. Humboldt county has the most sightings, which means that bigfoot is either a fan of the HSU football team (Go Jacks!) or he likes the cool, foggy redwoods. This plot doesn't show the numbers specifically, but the second highest number of sightings were in Tuolumne county.
+
+<div align="center">
+  <img src="images/plotly_CA.png" width="450" height="auto"/>
+  <p>Sighting counts per country for California.</p>
+</div>
+
 ## Sighting Content
 
 Looking at all of the sightings, a word cloud of the most frequent words can visually show the common words used to describe bigfoot sightings. A bag of words containing all the sighting text was created, and stop words (words like "the", "and", "or", etc) were filtered out. The word cloud was processed through a filter mask in the shape of bigfoot, and a nighttime forest background was added.
