@@ -170,3 +170,14 @@ Not too bad so far. Another example:
 - `My parents and I were heading east bound on SRK WAY in Nascahish National Park. I saw what looked like a Sasquatch for myself. It was near dusk. It crossed the road in front of me and went into the trees. It crossed the road in front of me and it was hairy like a person. It was dark brown and had shaggy hair. It went into the trees and I did not see it again.`
 
 These models are difficult to directly compare because there isn't a valid metric to compare them with, other than "Oh that sounds better!". Both main models (The PyTorch model took 4 days to train so I don't plan on trying that one again since the results weren't any better than the TensorFlow model) have lots of hyperparameters that can be tuned during training, and several for sampling. Since training times for both of these models were around 35 hours on the CPU and about 5 hours on the GPU (I am using a GTX 1080 Ti), it is preferable to tune the sampling hyperparameters. 
+
+# Twitter Bot
+
+For the twitter bot, `tweepy` was used to connect Python to Twitter's API. In order to tweet using a Python script, a Twitter developer account needs to be set up. After this, access to the proper keys which will connect the script to the twitter account is granted. The are stored in a json file and the file itself is added to `.gitignore` which prevents the file from being uploaded to the github repo.
+
+<div align="center">
+  <img src="images/sasBOTch.png" width="600" height="auto"/>
+  <p>sasBOTch, the twitter account that tweets sightings.</p>
+</div>
+
+Twitter has a character limit, so tweets need to be separated into multiple tweets if the character length exceeds 280 characters. 
