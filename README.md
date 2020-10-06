@@ -180,4 +180,13 @@ For the twitter bot, `tweepy` was used to connect Python to Twitter's API. In or
   <p>sasBOTch, the twitter account that tweets sightings.</p>
 </div>
 
-Twitter has a character limit, so tweets need to be separated into multiple tweets if the character length exceeds 280 characters. 
+Twitter has a character limit, so tweets need to be separated into multiple tweets if the character length exceeds 280 characters. The generated sighting is separated into multiple tweets and are numbered. The first tweet is tweeted out, and the `id` of that tweet is saved. The remaining tweets are tweeted in order, as replies to that first tweet, referenced by the `id`. The result looks like:
+
+<div align="center">
+  <img src="images/tweet.png" width="600" height="auto"/>
+  <p>An example tweet showing numbered tweet responses.</p>
+</div>
+
+## Automation
+
+The tweets are automated to run on an EC2 instance and are pulled randomly from a set of pre-generated sightings. This is done because the specific packages needed to generate tweets are not available on the instance being used, and it seemed easier at the time to generate a large number of sightings and have a script pull randomly from the pool of sightings, delete it from the list, and tweet it out. Currently the twitter bot tweets once every 4 hours.
